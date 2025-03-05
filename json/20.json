@@ -1,0 +1,242 @@
+[
+    {
+        "Quarter": "Q1-2022",
+        "Countries": {
+            "USA": 1,
+            "India": 0,
+            "France": 0,
+            "UK": 0,
+            "Australia": 0
+        },
+        "Occupations": {
+            "Sales": 3,
+            "Operations": 1,
+            "Software Engineering": 3,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75
+    },
+    {
+        "Quarter": "Q2-2022",
+        "Countries": {
+            "USA": 2,
+            "India": 1,
+            "France": 0,
+            "UK": 0,
+            "Australia": 1
+        },
+        "Occupations": {
+            "Sales": 4,
+            "Operations": 1,
+            "Software Engineering": 5,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75
+    },
+    {
+        "Quarter": "Q3-2022",
+        "Countries": {
+            "USA": 3,
+            "India": 1,
+            "France": 0,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 6,
+            "Operations": 2,
+            "Software Engineering": 5,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75
+    },
+    {
+        "Quarter": "Q4-2022",
+        "Countries": {
+            "USA": 4,
+            "India": 1,
+            "France": 0,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 2,
+            "Software Engineering": 5,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75
+    },
+    {
+        "Quarter": "Q5-2022",
+        "Countries": {
+            "USA": 4,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 2,
+            "Software Engineering": 5,
+            "Information Technology": 2,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75
+    },
+    {
+        "Quarter": "Q6-2022",
+        "Countries": {
+            "USA": 6,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 4,
+            "Software Engineering": 5,
+            "Information Technology": 2,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75
+    },
+    {
+        "Quarter": "Q7-2022",
+        "Countries": {
+            "USA": 7,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 4,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 7.42
+    },
+    {
+        "Quarter": "Q8-2022",
+        "Countries": {
+            "USA": 9,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 3
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 5,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999
+    },
+    {
+        "Quarter": "Q9-2022",
+        "Countries": {
+            "USA": 9,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 8,
+            "Operations": 5,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999
+    },
+    {
+        "Quarter": "Q10-2022",
+        "Countries": {
+            "USA": 10,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 8,
+            "Operations": 6,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999
+    },
+    {
+        "Quarter": "Q11-2022",
+        "Countries": {
+            "USA": 12,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 9,
+            "Operations": 6,
+            "Software Engineering": 7,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999
+    },
+    {
+        "Quarter": "Q12-2022",
+        "Countries": {
+            "USA": 12,
+            "India": 2,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 9,
+            "Operations": 6,
+            "Software Engineering": 8,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999
+    }
+]
