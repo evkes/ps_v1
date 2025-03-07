@@ -1,0 +1,278 @@
+[
+    {
+        "Quarter": "Q1-2022",
+        "Countries": {
+            "USA": 1,
+            "India": 0,
+            "France": 0,
+            "UK": 0,
+            "Australia": 0
+        },
+        "Occupations": {
+            "Sales": 3,
+            "Operations": 1,
+            "Software Engineering": 3,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75,
+        "Revenue": 400000,
+        "RevenuePerEmployee": 400000,
+        "CapitalToRevenueRatio": 9.375
+    },
+    {
+        "Quarter": "Q2-2022",
+        "Countries": {
+            "USA": 2,
+            "India": 1,
+            "France": 0,
+            "UK": 0,
+            "Australia": 1
+        },
+        "Occupations": {
+            "Sales": 4,
+            "Operations": 1,
+            "Software Engineering": 5,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75,
+        "Revenue": 600000,
+        "RevenuePerEmployee": 150000,
+        "CapitalToRevenueRatio": 6.25
+    },
+    {
+        "Quarter": "Q3-2022",
+        "Countries": {
+            "USA": 3,
+            "India": 1,
+            "France": 0,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 6,
+            "Operations": 2,
+            "Software Engineering": 5,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75,
+        "Revenue": 997143,
+        "RevenuePerEmployee": 142449,
+        "CapitalToRevenueRatio": 3.7607444468847495
+    },
+    {
+        "Quarter": "Q4-2022",
+        "Countries": {
+            "USA": 4,
+            "India": 1,
+            "France": 0,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 2,
+            "Software Engineering": 5,
+            "Information Technology": 1,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75,
+        "Revenue": 1148128,
+        "RevenuePerEmployee": 143516,
+        "CapitalToRevenueRatio": 3.2661863485604394
+    },
+    {
+        "Quarter": "Q5-2022",
+        "Countries": {
+            "USA": 4,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 2,
+            "Software Engineering": 5,
+            "Information Technology": 2,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75,
+        "Revenue": 1253889,
+        "RevenuePerEmployee": 139321,
+        "CapitalToRevenueRatio": 2.990695348631338
+    },
+    {
+        "Quarter": "Q6-2022",
+        "Countries": {
+            "USA": 6,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 4,
+            "Software Engineering": 5,
+            "Information Technology": 2,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 3.75,
+        "Revenue": 1415909,
+        "RevenuePerEmployee": 128719,
+        "CapitalToRevenueRatio": 2.6484752904318003
+    },
+    {
+        "Quarter": "Q7-2022",
+        "Countries": {
+            "USA": 7,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 2
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 4,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 0,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 7.42,
+        "Revenue": 1518744,
+        "RevenuePerEmployee": 126562,
+        "CapitalToRevenueRatio": 4.885616009017978
+    },
+    {
+        "Quarter": "Q8-2022",
+        "Countries": {
+            "USA": 9,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 3
+        },
+        "Occupations": {
+            "Sales": 7,
+            "Operations": 5,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999,
+        "Revenue": 1753995,
+        "RevenuePerEmployee": 116933,
+        "CapitalToRevenueRatio": 5.684166716552783
+    },
+    {
+        "Quarter": "Q9-2022",
+        "Countries": {
+            "USA": 9,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 8,
+            "Operations": 5,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999,
+        "Revenue": 1902496,
+        "RevenuePerEmployee": 118906,
+        "CapitalToRevenueRatio": 5.240484079861402
+    },
+    {
+        "Quarter": "Q10-2022",
+        "Countries": {
+            "USA": 10,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 8,
+            "Operations": 6,
+            "Software Engineering": 6,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999,
+        "Revenue": 1980007,
+        "RevenuePerEmployee": 116471,
+        "CapitalToRevenueRatio": 5.0353357336615465
+    },
+    {
+        "Quarter": "Q11-2022",
+        "Countries": {
+            "USA": 12,
+            "India": 1,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 9,
+            "Operations": 6,
+            "Software Engineering": 7,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999,
+        "Revenue": 2229745,
+        "RevenuePerEmployee": 117355,
+        "CapitalToRevenueRatio": 4.471363317330008
+    },
+    {
+        "Quarter": "Q12-2022",
+        "Countries": {
+            "USA": 12,
+            "India": 2,
+            "France": 1,
+            "UK": 1,
+            "Australia": 4
+        },
+        "Occupations": {
+            "Sales": 9,
+            "Operations": 6,
+            "Software Engineering": 8,
+            "Information Technology": 2,
+            "Marketing": 2,
+            "Administration": 0,
+            "Human Resources": 0
+        },
+        "Capital": 9.969999999999999,
+        "Revenue": 2236500,
+        "RevenuePerEmployee": 111825,
+        "CapitalToRevenueRatio": 4.457858260675161
+    }
+]

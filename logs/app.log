@@ -1,0 +1,52 @@
+2025-03-04 20:39:22,720 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-03-04 20:39:22,720 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 20:39:22,724 - INFO -  * Restarting with stat
+2025-03-04 20:39:22,865 - WARNING -  * Debugger is active!
+2025-03-04 20:39:22,865 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:40:48,275 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:40:48,299 - INFO -  * Restarting with stat
+2025-03-04 20:40:48,456 - WARNING -  * Debugger is active!
+2025-03-04 20:40:48,456 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:40:49,470 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:40:49,487 - INFO -  * Restarting with stat
+2025-03-04 20:40:49,644 - WARNING -  * Debugger is active!
+2025-03-04 20:40:49,644 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:40:51,660 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:40:51,680 - INFO -  * Restarting with stat
+2025-03-04 20:41:47,311 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-03-04 20:41:47,311 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 20:41:47,311 - INFO -  * Restarting with stat
+2025-03-04 20:41:47,469 - WARNING -  * Debugger is active!
+2025-03-04 20:41:47,469 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:42:05,562 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:42:05,586 - INFO -  * Restarting with stat
+2025-03-04 20:42:05,745 - WARNING -  * Debugger is active!
+2025-03-04 20:42:05,748 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:42:10,774 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:42:10,789 - INFO -  * Restarting with stat
+2025-03-04 20:42:10,948 - WARNING -  * Debugger is active!
+2025-03-04 20:42:10,948 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:42:14,975 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:42:14,995 - INFO -  * Restarting with stat
+2025-03-04 20:42:15,159 - WARNING -  * Debugger is active!
+2025-03-04 20:42:15,159 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:42:17,523 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-03-04 20:42:17,524 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 20:42:17,524 - INFO -  * Restarting with stat
+2025-03-04 20:42:17,673 - WARNING -  * Debugger is active!
+2025-03-04 20:42:17,673 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:42:44,815 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:42:44,833 - INFO -  * Restarting with stat
+2025-03-04 20:42:44,987 - WARNING -  * Debugger is active!
+2025-03-04 20:42:44,991 - INFO -  * Debugger PIN: 253-731-506
+2025-03-04 20:42:57,059 - INFO -  * Detected change in 'C:\\Users\\Evan.PEAKSPAN-PW083Y\\Desktop\\ps_v1\\run.py', reloading
+2025-03-04 20:42:57,079 - INFO -  * Restarting with stat

@@ -3,140 +3,565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
-    <title>Employee & Capital Dashboard</title>
+    <title>Company Performance Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .kpi-card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+        }
+        .kpi-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .kpi-label {
+            font-size: 14px;
+            color: #666;
+        }
+        .chart-container {
+            height: 250px;
+            position: relative;
+        }
+        .mini-chart {
+            height: 120px;
+        }
+        .dashboard-header {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .quarter-nav {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 5px 0;
+            margin-bottom: 15px;
+        }
+        .quarter-btn {
+            padding: 5px 10px;
+            margin-right: 5px;
+        }
+        .active-quarter {
+            background-color: #4b6cb7;
+            color: white;
+        }
+    </style>
 </head>
-<body class="container py-4">
-    <h2 class="text-center">Employee Growth Over Time</h2>
+<body class="container-fluid py-3">
+    <div class="dashboard-header text-center">
+        <h2>Company Performance Dashboard</h2>
+        <p class="mb-0">Comprehensive view of employee growth, revenue, and capital metrics</p>
+    </div>
     
-    <div class="mb-3 text-center">
-        <input type="number" id="companyIdInput" class="form-control w-25 d-inline" placeholder="Enter Company ID">
-        <button class="btn btn-primary" onclick="fetchCompanyData()">Search</button>
+    <div class="row mb-3">
+        <div class="col-md-2">
+            <div class="input-group">
+                <input type="number" id="companyIdInput" class="form-control" placeholder="Company ID" value="1">
+                <button class="btn btn-primary" onclick="fetchCompanyData()">Load</button>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div id="quarterNav" class="quarter-nav"></div>
+        </div>
+    </div>
+    
+    <!-- KPI Cards Row -->
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <div class="card kpi-card bg-light">
+                <div class="card-body text-center">
+                    <div class="kpi-label">Total Employees</div>
+                    <div id="totalEmployees" class="kpi-value">-</div>
+                    <div id="employeeGrowth" class="small"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card kpi-card bg-light">
+                <div class="card-body text-center">
+                    <div class="kpi-label">Total Revenue</div>
+                    <div id="totalRevenue" class="kpi-value">-</div>
+                    <div id="revenueGrowth" class="small"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card kpi-card bg-light">
+                <div class="card-body text-center">
+                    <div class="kpi-label">Revenue Per Employee</div>
+                    <div id="revenuePerEmployee" class="kpi-value">-</div>
+                    <div id="rpeChange" class="small"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card kpi-card bg-light">
+                <div class="card-body text-center">
+                    <div class="kpi-label">Capital Investment</div>
+                    <div id="capitalValue" class="kpi-value">-</div>
+                    <div id="capitalToRevenue" class="small"></div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <div class="row">
-        <div class="col-md-4">
-            <h3 class="text-center">Employees by Country</h3>
-            <canvas id="countryChart"></canvas>
-            <h3 class="text-center mt-4">Employees by Occupation</h3>
-            <canvas id="occupationChart"></canvas>
-        </div>
+        <!-- Main Charts -->
         <div class="col-md-8">
-            <canvas id="employeeChart" class="mb-4"></canvas>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Employee Growth & Revenue Trend</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="mainChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Revenue vs. Capital Ratio</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="revenueCapitalChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Revenue per Employee Trend</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="rpeChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Column with Pie Charts -->
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Employees by Country</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="countryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Employees by Occupation</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-container">
+                                <canvas id="occupationChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        let employeeChart, countryChart, occupationChart;
+        let mainChart, countryChart, occupationChart, revenueCapitalChart, rpeChart, geoDistributionChart;
+        let currentData = [];
+        let selectedQuarterIndex = 0;
         
+        // Fetch company data from Flask API
         function fetchCompanyData() {
-            const companyId = document.getElementById('companyIdInput').value;
-            if (!companyId) return;
+            const companyId = document.getElementById('companyIdInput').value || 1;
             
-            $.getJSON(`/data?company_id=${companyId}`, function(data) {
-                updateCharts(data);
-            }).fail(function() {
-                alert("Company data not found");
+            // Show loading state
+            document.getElementById('totalEmployees').innerText = 'Loading...';
+            document.getElementById('totalRevenue').innerText = 'Loading...';
+            document.getElementById('revenuePerEmployee').innerText = 'Loading...';
+            document.getElementById('capitalValue').innerText = 'Loading...';
+            
+            // Fetch from Flask API
+            $.ajax({
+                url: `/data?company_id=${companyId}`,
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    console.log(data);
+                    currentData = data;
+                    updateDashboard(data);
+                    createQuarterNavigation(data);
+                    selectQuarter(0);
+                },
+                error: function(jqxhr, textStatus, error) {
+                    console.error('Error fetching data:', error);
+                    alert(`Failed to load data for Company ${companyId}. Error: ${error}`);
+
+                    // Reset displays
+                    document.getElementById('totalEmployees').innerText = '-';
+                    document.getElementById('totalRevenue').innerText = '-';
+                    document.getElementById('revenuePerEmployee').innerText = '-';
+                    document.getElementById('capitalValue').innerText = '-';
+                }
             });
         }
         
-        function updateCharts(data) {
-            const ctxEmployee = document.getElementById('employeeChart').getContext('2d');
-            const ctxCountry = document.getElementById('countryChart').getContext('2d');
-            const ctxOccupation = document.getElementById('occupationChart').getContext('2d');
+        // Create quarter navigation buttons
+        function createQuarterNavigation(data) {
+            const quarterNav = document.getElementById('quarterNav');
+            quarterNav.innerHTML = '';
             
+            data.forEach((quarter, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'btn btn-sm btn-outline-secondary quarter-btn';
+                btn.innerText = quarter.Quarter;
+                btn.onclick = () => selectQuarter(index);
+                quarterNav.appendChild(btn);
+            });
+        }
+        
+        // Select a specific quarter
+        function selectQuarter(index) {
+            selectedQuarterIndex = index;
+            
+            // Update button styles
+            const buttons = document.querySelectorAll('.quarter-btn');
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add('active-quarter');
+                } else {
+                    btn.classList.remove('active-quarter');
+                }
+            });
+            
+            // Update pie charts and KPIs for the selected quarter
+            updateQuarterView(currentData[index], index);
+        }
+        
+        // Update dashboard with new data
+        function updateDashboard(data) {
+            updateMainCharts(data);
+            updateQuarterView(data[0], 0); // Default to first quarter
+        }
+        
+        // Update the main trend charts
+        function updateMainCharts(data) {
+            const quarters = data.map(d => d.Quarter);
             const totalEmployees = data.map(d => Object.values(d.Countries).reduce((a, b) => a + b, 0));
-            const capitalRaises = data.map(d => d.Capital);
+            const revenues = data.map(d => d.Revenue / 1000000); // Convert to millions
+            const revenuePerEmployee = data.map(d => d.RevenuePerEmployee / 1000);
+            const capitals = data.map(d => d.Capital);
+            const capitalToRevenue = data.map(d => d.CapitalToRevenueRatio);
             
-            let capitalRaisePoints = capitalRaises.map((val, index, arr) => 
-                index > 0 && val !== arr[index - 1] ? 'star' : 'circle');
-            let capitalRaiseSizes = capitalRaises.map((val, index, arr) => 
-                index > 0 && val !== arr[index - 1] ? 8 : 4);
-            let capitalRaiseAmounts = capitalRaises.map((val, index, arr) =>
-                index > 0 && val !== arr[index - 1] ? `Capital Raised: ${(val - arr[index - 1]).toFixed(2)}M` : '');
+            // Main chart (employees and revenue)
+            const ctxMain = document.getElementById('mainChart').getContext('2d');
+            if (mainChart) mainChart.destroy();
             
-            if (employeeChart) employeeChart.destroy();
-            employeeChart = new Chart(ctxEmployee, {
+            mainChart = new Chart(ctxMain, {
                 type: 'line',
                 data: {
-                    labels: data.map(d => d.Quarter),
-                    datasets: [{
-                        label: 'Total Employees',
-                        data: totalEmployees,
-                        borderColor: 'blue',
-                        fill: false,
-                        pointStyle: capitalRaisePoints,
-                        pointRadius: capitalRaiseSizes,
-                        pointHoverRadius: 10,
-                    }]
+                    labels: quarters,
+                    datasets: [
+                        {
+                            label: 'Total Employees',
+                            data: totalEmployees,
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                            fill: true,
+                            yAxisID: 'y',
+                            tension: 0.3
+                        },
+                        {
+                            label: 'Revenue (Millions $)',
+                            data: revenues,
+                            borderColor: 'rgba(75, 192, 75, 1)',
+                            backgroundColor: 'rgba(75, 192, 75, 0.1)',
+                            fill: true,
+                            yAxisID: 'y1',
+                            tension: 0.3
+                        }
+                    ]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
-                        x: {
-                            type: 'category',
-                            title: { display: true, text: 'Quarter' }
-                        },
                         y: {
-                            title: { display: true, text: 'Total Employees' }
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Employees'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Revenue (M$)'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
                         }
                     },
                     plugins: {
                         tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = ' Employees: ' + context.raw;
-                                    if (capitalRaisePoints[context.dataIndex] === 'star') {
-                                        label += ` (⭐ ${capitalRaiseAmounts[context.dataIndex]})`;
-                                    }
-                                    return label;
-                                }
-                            }
-                        }
-                    },
-                    onClick: (event, elements) => {
-                        if (elements.length > 0) {
-                            const index = elements[0].index;
-                            updatePieCharts(data[index]);
+                            mode: 'index',
+                            intersect: false
                         }
                     }
                 }
             });
             
-            updatePieCharts(data[0]);
+            // Revenue-Capital Chart
+            const ctxRC = document.getElementById('revenueCapitalChart').getContext('2d');
+            if (revenueCapitalChart) revenueCapitalChart.destroy();
+            
+            revenueCapitalChart = new Chart(ctxRC, {
+                type: 'bar',
+                data: {
+                    labels: quarters,
+                    datasets: [
+                        {
+                            label: 'Capital (M$)',
+                            data: capitals,
+                            backgroundColor: 'rgba(220, 53, 69, 0.7)'
+                        },
+                        {
+                            label: 'Capital-to-Revenue Ratio',
+                            data: capitalToRevenue,
+                            type: 'line',
+                            borderColor: 'rgba(255, 153, 0, 1)',
+                            tension: 0.3,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Capital (M$)'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Ratio'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Revenue per Employee Chart
+            const ctxRPE = document.getElementById('rpeChart').getContext('2d');
+            if (rpeChart) rpeChart.destroy();
+            
+            rpeChart = new Chart(ctxRPE, {
+                type: 'line',
+                data: {
+                    labels: quarters,
+                    datasets: [{
+                        label: 'Revenue per Employee (K$)',
+                        data: revenuePerEmployee,
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        backgroundColor: 'rgba(153, 102, 255, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'K$ per Employee'
+                            }
+                        }
+                    }
+                }
+            });
         }
         
-        function updatePieCharts(selectedData) {
-            const ctxCountry = document.getElementById('countryChart').getContext('2d');
-            const ctxOccupation = document.getElementById('occupationChart').getContext('2d');
+        // Update the quarterly view (pie charts and KPIs)
+        function updateQuarterView(quarterData, index) {
+            // Update KPIs
+            updateKPIs(quarterData, index);
             
+            // Country Pie Chart
+            const ctxCountry = document.getElementById('countryChart').getContext('2d');
             if (countryChart) countryChart.destroy();
+            
+            const countryLabels = Object.keys(quarterData.Countries);
+            const countryData = Object.values(quarterData.Countries);
+            
             countryChart = new Chart(ctxCountry, {
                 type: 'pie',
                 data: {
-                    labels: Object.keys(selectedData.Countries),
+                    labels: countryLabels,
                     datasets: [{
-                        data: Object.values(selectedData.Countries),
-                        backgroundColor: ['red', 'blue', 'green', 'yellow', 'orange']
+                        data: countryData,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)'
+                        ]
                     }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
                 }
             });
             
+            // Occupation Pie Chart
+            const ctxOccupation = document.getElementById('occupationChart').getContext('2d');
             if (occupationChart) occupationChart.destroy();
+            
+            const occupationLabels = Object.keys(quarterData.Occupations);
+            const occupationData = Object.values(quarterData.Occupations);
+            
             occupationChart = new Chart(ctxOccupation, {
                 type: 'pie',
                 data: {
-                    labels: Object.keys(selectedData.Occupations),
+                    labels: occupationLabels,
                     datasets: [{
-                        data: Object.values(selectedData.Occupations),
-                        backgroundColor: ['purple', 'cyan', 'pink', 'grey', 'brown', 'black', 'magenta']
+                        data: occupationData,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(201, 203, 207, 0.7)'
+                        ]
                     }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
                 }
             });
+            
+            // Geographic Distribution Chart (Western vs Eastern)
+            const westernCountries = ["USA", "Australia", "UK", "France"];
+            const easternCountries = ["India"];
+            
         }
+        
+        // Update KPI cards
+        function updateKPIs(quarterData, index) {
+            const totalEmployees = Object.values(quarterData.Countries).reduce((a, b) => a + b, 0);
+            const revenue = quarterData.Revenue;
+            const revenuePerEmployee = quarterData.RevenuePerEmployee;
+            const capital = quarterData.Capital;
+            const capitalToRevenue = quarterData.CapitalToRevenueRatio;
+            
+            // Format and display values
+            document.getElementById('totalEmployees').innerText = totalEmployees;
+            document.getElementById('totalRevenue').innerText = `$${(revenue / 1000000).toFixed(2)}M`;
+            document.getElementById('revenuePerEmployee').innerText = `$${revenuePerEmployee.toLocaleString()}`;
+            document.getElementById('capitalValue').innerText = `$${capital}M`;
+            document.getElementById('capitalToRevenue').innerText = `${capitalToRevenue.toFixed(2)}x Ratio`;
+            
+            // Calculate and display growth indicators
+            if (index > 0 && currentData.length > 1) {
+                const prevQuarter = currentData[index - 1];
+                const prevEmployees = Object.values(prevQuarter.Countries).reduce((a, b) => a + b, 0);
+                const prevRevenue = prevQuarter.Revenue;
+                const prevRPE = prevQuarter.RevenuePerEmployee;
+                
+                // Employee growth
+                const employeeGrowth = ((totalEmployees - prevEmployees) / prevEmployees) * 100;
+                const employeeGrowthEl = document.getElementById('employeeGrowth');
+                employeeGrowthEl.innerText = `${employeeGrowth.toFixed(1)}% vs prev. quarter`;
+                employeeGrowthEl.className = 'small ' + (employeeGrowth >= 0 ? 'text-success' : 'text-danger');
+                
+                // Revenue growth
+                const revenueGrowth = ((revenue - prevRevenue) / prevRevenue) * 100;
+                const revenueGrowthEl = document.getElementById('revenueGrowth');
+                revenueGrowthEl.innerText = `${revenueGrowth.toFixed(1)}% vs prev. quarter`;
+                revenueGrowthEl.className = 'small ' + (revenueGrowth >= 0 ? 'text-success' : 'text-danger');
+                
+                // RPE change
+                const rpeChange = ((revenuePerEmployee - prevRPE) / prevRPE) * 100;
+                const rpeChangeEl = document.getElementById('rpeChange');
+                rpeChangeEl.innerText = `${rpeChange.toFixed(1)}% vs prev. quarter`;
+                rpeChangeEl.className = 'small ' + (rpeChange >= 0 ? 'text-success' : 'text-danger');
+            } else {
+                document.getElementById('employeeGrowth').innerText = 'First quarter';
+                document.getElementById('revenueGrowth').innerText = 'First quarter';
+                document.getElementById('rpeChange').innerText = 'First quarter';
+            }
+        }
+        
+        // Load initial data when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchCompanyData();
+            
+            // Allow Enter key to trigger search
+            document.getElementById('companyIdInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    fetchCompanyData();
+                }
+            });
+        });
     </script>
 </body>
 </html>

@@ -17,7 +17,10 @@
             "Administration": 0,
             "Human Resources": 1
         },
-        "Capital": 4.64
+        "Capital": 4.64,
+        "Revenue": 501666,
+        "RevenuePerEmployee": 83611,
+        "CapitalToRevenueRatio": 9.249181726487345
     },
     {
         "Quarter": "Q2-2022",
@@ -37,7 +40,10 @@
             "Administration": 0,
             "Human Resources": 1
         },
-        "Capital": 4.64
+        "Capital": 4.64,
+        "Revenue": 768330,
+        "RevenuePerEmployee": 85370,
+        "CapitalToRevenueRatio": 6.03907175302279
     },
     {
         "Quarter": "Q3-2022",
@@ -57,7 +63,10 @@
             "Administration": 0,
             "Human Resources": 1
         },
-        "Capital": 4.64
+        "Capital": 4.64,
+        "Revenue": 1031256,
+        "RevenuePerEmployee": 85938,
+        "CapitalToRevenueRatio": 4.499367761254238
     },
     {
         "Quarter": "Q4-2022",
@@ -77,10 +86,13 @@
             "Administration": 0,
             "Human Resources": 1
         },
-        "Capital": 4.64
+        "Capital": 4.64,
+        "Revenue": 1132690,
+        "RevenuePerEmployee": 87130,
+        "CapitalToRevenueRatio": 4.096442980868552
     },
     {
-        "Quarter": "Q5-2022",
+        "Quarter": "Q1-2023",
         "Countries": {
             "USA": 5,
             "India": 5,
@@ -97,10 +109,13 @@
             "Administration": 0,
             "Human Resources": 1
         },
-        "Capital": 7.67
+        "Capital": 7.67,
+        "Revenue": 1384368,
+        "RevenuePerEmployee": 86523,
+        "CapitalToRevenueRatio": 5.540434335379032
     },
     {
-        "Quarter": "Q6-2022",
+        "Quarter": "Q2-2023",
         "Countries": {
             "USA": 7,
             "India": 6,
@@ -117,10 +132,13 @@
             "Administration": 0,
             "Human Resources": 2
         },
-        "Capital": 9.83
+        "Capital": 9.83,
+        "Revenue": 1571319,
+        "RevenuePerEmployee": 82701,
+        "CapitalToRevenueRatio": 6.255890751655138
     },
     {
-        "Quarter": "Q7-2022",
+        "Quarter": "Q3-2023",
         "Countries": {
             "USA": 7,
             "India": 7,
@@ -137,10 +155,13 @@
             "Administration": 0,
             "Human Resources": 3
         },
-        "Capital": 9.83
+        "Capital": 9.83,
+        "Revenue": 1777270,
+        "RevenuePerEmployee": 80785,
+        "CapitalToRevenueRatio": 5.53095477895874
     },
     {
-        "Quarter": "Q8-2022",
+        "Quarter": "Q4-2023",
         "Countries": {
             "USA": 8,
             "India": 8,
@@ -157,10 +178,13 @@
             "Administration": 0,
             "Human Resources": 3
         },
-        "Capital": 9.83
+        "Capital": 9.83,
+        "Revenue": 2002000,
+        "RevenuePerEmployee": 80080,
+        "CapitalToRevenueRatio": 4.91008991008991
     },
     {
-        "Quarter": "Q9-2022",
+        "Quarter": "Q1-2024",
         "Countries": {
             "USA": 9,
             "India": 8,
@@ -177,10 +201,13 @@
             "Administration": 0,
             "Human Resources": 3
         },
-        "Capital": 9.83
+        "Capital": 9.83,
+        "Revenue": 2268560,
+        "RevenuePerEmployee": 81020,
+        "CapitalToRevenueRatio": 4.333145255139824
     },
     {
-        "Quarter": "Q10-2022",
+        "Quarter": "Q2-2024",
         "Countries": {
             "USA": 9,
             "India": 8,
@@ -197,10 +224,13 @@
             "Administration": 0,
             "Human Resources": 3
         },
-        "Capital": 9.83
+        "Capital": 9.83,
+        "Revenue": 2470680,
+        "RevenuePerEmployee": 82356,
+        "CapitalToRevenueRatio": 3.9786617449447115
     },
     {
-        "Quarter": "Q11-2022",
+        "Quarter": "Q3-2024",
         "Countries": {
             "USA": 11,
             "India": 9,
@@ -217,10 +247,13 @@
             "Administration": 0,
             "Human Resources": 3
         },
-        "Capital": 9.83
+        "Capital": 9.83,
+        "Revenue": 2655906,
+        "RevenuePerEmployee": 80482,
+        "CapitalToRevenueRatio": 3.7011852076090044
     },
     {
-        "Quarter": "Q12-2022",
+        "Quarter": "Q4-2024",
         "Countries": {
             "USA": 12,
             "India": 11,
@@ -237,6 +270,9 @@
             "Administration": 0,
             "Human Resources": 5
         },
-        "Capital": 9.83
+        "Capital": 9.83,
+        "Revenue": 2746944,
+        "RevenuePerEmployee": 76304,
+        "CapitalToRevenueRatio": 3.5785221686354
     }
 ]

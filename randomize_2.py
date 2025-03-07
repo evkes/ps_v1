@@ -67,7 +67,7 @@ def clone_previous_quarter(data, growth_type="linear"):
             selected_occupation = random.choices(occupation_keys, weights=occupation_weights)[0]
             previous_entry['Occupations'][selected_occupation] = max(0, previous_entry['Occupations'][selected_occupation] + (1 if new_hires > 0 else -1))
         
-        previous_entry['Quarter'] = f"Q{i+1}-2022"
+        previous_entry['Quarter'] = f"Q{i+1}"
         data[i] = previous_entry  # Store the updated entry without modifying previous ones
     
     return data
